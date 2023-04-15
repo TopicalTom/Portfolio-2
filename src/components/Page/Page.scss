@@ -1,0 +1,33 @@
+@import "../../styles/baseline.scss";
+
+.page {
+    margin: 0;
+    width: 100vw;
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+    @include theme-aware('background', 'system-background-primary');
+    @include theme-aware('color', 'color-text');
+
+    &__container {
+        margin: 0px;
+        //flex-direction: column;
+        //justify-content: space-between;
+        padding-top: 200px;
+
+        @include tablet {
+            margin: 0 60px;
+            padding-top: 240px;
+            //display: flex;
+            //flex-direction: row;
+        }
+
+        @include laptop-small {
+            margin: 0 100px;
+        }
+
+        @include laptop {
+            margin: 0 auto;
+            width: 1000px;
+        }
+    }
+}

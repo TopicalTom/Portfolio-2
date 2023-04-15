@@ -1,0 +1,9 @@
+@import "../../styles/baseline.scss";
+
+.section {
+    margin-bottom: 6rem;
+
+    & > p, h1, h2, h3, span {
+        padding-bottom: 1.5rem;
+    }
+}

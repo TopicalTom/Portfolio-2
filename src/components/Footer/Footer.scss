@@ -1,0 +1,182 @@
+@import "../../styles/baseline.scss";
+
+.footer {
+    width: 100vw;
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+    @include theme-aware('background', 'system-background-primary');
+
+    @include tablet {
+        padding: 100px 0px;
+    }
+
+    @include laptop {
+        padding: 60px 100px 100px 100px;
+        transition: background-color 0.3s ease;
+        border-color: #ffffff16;
+        //@include theme-aware('border-color', 'content-outline-light');
+    }
+
+    &__container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            margin: 0 100px;
+        }
+
+        @include laptop-small {
+            margin: 0 100px;
+        }
+
+        @include desktop {
+            margin: 0 auto;
+            width: 1000px;
+        }
+    }
+
+    &__top {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin: auto;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__wordmark {
+        display: none;
+
+        & > h3 {
+            color: white;
+            //@include theme-aware('color', 'color-text');
+        }
+
+        @include laptop {
+            display: flex;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+        justify-content: space-between;
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        @include theme-aware('color', 'color-text');
+        width: 100%;
+        display: flex;
+        font-size: 1rem;
+        padding-bottom: 0.75rem;
+        font-weight: bold;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link {
+        width: 100%;
+        display: flex;
+
+        &--external,
+        &--internal {
+            width: 100%;
+            display: flex;
+            @include theme-aware('color', 'color-text-alt');
+    
+            &:hover {
+                @include theme-aware('color', 'link');
+            }
+        }
+
+        &--social {
+            padding: 0px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include tablet {
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            padding-top: 40px;
+            border-top: 1px solid;
+            margin: auto;
+            border-color: #ffffff16;
+            //@include theme-aware('border-color', 'content-outline-light');
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        width: 260px;
+        padding-inline-start: 0px;
+
+        @include tablet {
+            width: 300px;
+            margin: 0;
+        }
+    }
+
+    &__icon {
+        opacity: 0.6;
+        width: 25px;
+        height: 25px;
+        transition: all 0.2s ease 0s;
+        @include theme-aware('fill', 'color-text-alt');
+
+        &:hover {
+            @include theme-aware('fill', 'color-text');
+            opacity: 1;
+        }
+    }
+
+    &__copyright {
+        display: flex;
+        flex-direction: row;
+        justify-self: center;
+        margin: auto;
+        padding-top: 20px;
+        text-align: center;
+        padding-bottom: 80px;
+        position: relative;
+        @extend p;
+        @include theme-aware('color', 'color-text-alt');
+
+        @include tablet {
+            padding: 0px;
+            margin: 0;
+        }
+    }
+
+    &__github {
+        text-decoration: none;
+        @extend p;
+        margin-left: 5px;
+        @include theme-aware('color', 'color-text-alt');
+
+        &:hover {
+            @include theme-aware('color', 'link');
+        }
+    }
+}

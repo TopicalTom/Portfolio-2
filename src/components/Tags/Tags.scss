@@ -1,0 +1,56 @@
+@import "../../styles/baseline.scss";
+
+.tag {
+    //margin: 1.5rem 0rem 1.5rem 0rem;
+    //align-items: center;
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        height: 60px;
+    }
+
+    &__card {
+        display: flex;
+        margin: 1rem 0rem 1rem 0rem;
+        padding: auto;
+        border-right: 1px solid;
+        margin-right: 1.5rem;
+        @include theme-aware('border-right-color', 'content-outline-light');
+        align-content: center;
+        align-items: center;
+
+        &:last-child {
+            border-right: 0px solid;
+        }
+    }
+
+    &__symbol {
+        margin-right: 10px;
+        padding: auto;
+        align-self: center;
+
+        &--type {
+            //width: 20px;
+            height: 20px;
+        }
+
+        &--role {
+            //width: 18px;
+            height: 18px;
+        }
+
+        &--duration {
+            //width: 21px;
+            height: 20px;
+        }
+    }
+
+    &__content {
+        padding-right: 1.5rem;
+        font-weight: bold;
+        align-self: center;
+    }
+}

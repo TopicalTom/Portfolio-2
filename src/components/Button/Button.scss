@@ -1,0 +1,10 @@
+@import "../../styles/baseline.scss";
+
+.button {
+
+    & > span {
+
+        width: auto;
+    }
+
+}

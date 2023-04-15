@@ -1,0 +1,319 @@
+@import "../../styles/baseline.scss";
+
+.main {
+    width: 100vw;
+    margin: 0;
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+    @include theme-aware('background', 'system-background-primary');
+    @include theme-aware('color', 'color-text');
+
+    &__container {
+        margin: 0 20px;
+        height: 100vh;
+        display: flex;
+        vertical-align: center;
+        padding: auto 0;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            margin: 0 60px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        @include laptop-small {
+            margin: 0 100px;
+        }
+
+        @include laptop {
+            margin: 0 auto;
+            width: 1000px;
+        }
+    }
+
+    &__heading {
+        width: 100%;
+        margin-bottom: 30px;
+
+        @include tablet {
+            width: 80%;
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto 0;
+        padding: auto;
+
+        @include laptop {
+            width: 90%;
+        }
+    }
+
+    &__actions {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        padding: auto 0px;
+    }
+
+    &__button {
+        width: 200px;
+        padding: 0.5rem 2rem;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+        background-color: whitesmoke;
+        //@include theme-aware('background-color', 'button');
+        //box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
+
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        @include tablet {
+            width: 160px;
+        }
+    }
+
+    &__label {
+        transition: color 0.3s ease;
+        color: $black;
+        //@include theme-aware('color', 'color-text-button');
+    }
+
+    &__toggle {
+        display: none;
+        margin-bottom: 25px;
+        padding: auto 0;
+        align-items: center;
+        justify-content: space-between;
+        width: 150px;
+    }
+
+    &__cta {
+        width: 4px;
+        @include theme-aware('background-color', 'scroller');
+        border-radius: 12px;
+        color: white;
+        vertical-align: left;
+
+        animation: scroll .9s infinite alternate ease-in-out;
+
+        @keyframes scroll {
+            from { 
+                height: 70px;
+            };
+            to { 
+                height: 160px;
+            };
+        }
+
+        &:hover {
+            cursor: pointer;
+            @include theme-aware('background-color', 'scroller-hover');
+        }
+    }
+
+    &__mission {
+        display: flex;
+        padding-bottom: 40px;
+        @include theme-aware('color', 'color-text-alt');
+        width: 70%;
+        font-weight: 500;
+
+        @include tablet {
+            padding-bottom: 80px;
+        }
+    }
+
+    &__projects {
+        margin-top: 60px;
+    }
+
+    &__redirect {
+        width: 1000px;
+        align-self: center;
+    }
+}
+
+.promo {
+    width: 100vw;
+    margin: 0;
+    margin-bottom: 100px;
+    margin: auto 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+        margin: auto 60px;
+    }
+
+    @include laptop-small {
+        margin: auto 100px;
+    }
+
+    @include laptop {
+        margin: auto;
+        width: 1000px;
+    }
+
+    &__container {
+        margin: auto 20px;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            margin: auto 60px;
+        }
+
+        @include laptop-small {
+            margin: auto 100px;
+        }
+
+        @include laptop {
+            margin: auto;
+            width: 1000px;
+        }
+
+        &--right {
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &--left {
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+            }
+        }
+    }
+
+    &__preview {
+        width: 100%;
+        position: relative;
+
+        @include tablet {
+            width: 45%;
+        }
+
+        @include laptop {
+            width: 50%;
+        }
+    }
+
+    &__project {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 2.4rem;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        vertical-align: center;
+        margin: auto;
+        width: 80vw;
+
+        @include tablet {
+            width: 45%;
+        }
+
+        @include laptop {
+            width: 50%;
+        }
+    }
+
+    &__description {
+        @include theme-aware('color', 'color-text-alt');
+        padding-bottom: 20px;
+    }
+
+    &__link {
+        width: 150px;
+        height: 50px;
+        margin-right: 25px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        width: 100%;
+        align-items: baseline;
+    }
+
+    &__redirect {
+        height: 34px;
+        padding: 10px 0px;
+        margin: 8px 0px;
+    }
+
+    &__toggle {
+        position: absolute;
+        margin-top: 0px;
+        bottom: 0;
+        right: 0;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        height: 80px;
+        display: flex;
+        //background-color: red;
+        justify-content: space-around;
+
+        @include laptop-small {
+            left: 0;
+            //top: 200;
+            //margin-top: 620px;
+            justify-content: space-around;
+        }
+    }
+
+    &__player {
+        width: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__cta {
+        @include theme-aware('color', 'link');
+        font-size: 1rem;
+    }
+
+    &__button {
+        display: flex;
+        flex-direction: row;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:hover > svg {
+            padding-right: 12px;
+            padding-left: 0px;
+            transform: 0.3 ease;
+        }
+    }
+
+    &__chevron {
+        transform: scaleX(-1);
+        padding-right: 8px;
+        padding-left: 4px;
+        margin: auto 0rem;
+        height: 24px;
+        @include theme-aware('fill', 'link');
+    }
+}

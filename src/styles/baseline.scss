@@ -1,0 +1,139 @@
+@import "./partials/breakpoints";
+@import "./partials/_mixins";
+@import "./partials/fonts";
+@import "./partials/colors";
+//@import "./partials/themes";
+
+html, 
+body {
+    margin: 0;
+    box-sizing: border-box;
+    //transition: color 0.3s ease;
+    //transition: background-color 0.3s ease;
+    background: $white;
+    color: $black;
+    //@include theme-aware('background', 'system-background-primary');
+    //@include theme-aware('color', 'color-text');
+}
+
+h1 {
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+    font-family: Neue Haas, sans-serif;
+    font-weight: 700;
+    //transition: color 0.3s ease;
+    color: $black;
+    //@include theme-aware('color', 'color-text');
+
+    @include tablet {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    //transition: color 0.3s ease;
+    font-family: Neue Haas, sans-serif;
+    font-weight: 700;
+    color: $black;
+    //@include theme-aware('color', 'color-text');
+}
+
+h3 {
+    font-size: 1.2rem;
+    line-height: 1.375rem;
+    margin: 0;
+    //transition: color 0.3s ease;
+    color: $black;
+    //@include theme-aware('color', 'color-text');
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 2.2rem;
+    //transition: color 0.3s ease;
+    color: $grey;
+    //@include theme-aware('color', 'color-paragraph');
+}
+
+h4 {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: normal;
+    color: rgb(142,142,147);
+    font-family: Neue Haas, sans-serif;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+
+h5 {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: Neue Haas, sans-serif;
+    color: rgb(142,142,147);
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+a {
+    //@include theme-aware('color', 'color-paragraph');
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1.25rem;
+    line-height: 2.2rem;
+    //font-size: 0.8125rem;
+    //line-height: 1.125rem;
+    font-weight: normal;
+
+    @include tablet {
+        font-size: 1rem;
+        line-height: 2.2rem;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    transition: color 0.3s ease;
+    font-family: Neue Haas, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    html,
+    body {
+        background: $black;
+        color: $white;
+    }
+
+    h1, h2, h3 {
+        color: $white;
+    }
+
+    a {
+        color: $grey;
+    }
+
+    p {
+        color: $grey;
+    }
+}
