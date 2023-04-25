@@ -1,0 +1,13 @@
+@import "../../styles/baseline.scss";
+
+.wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: max-content;
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    background: rgba(14, 14, 14, 0.65);
+    z-index: 100;
+}

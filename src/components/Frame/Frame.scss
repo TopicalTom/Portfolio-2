@@ -1,0 +1,32 @@
+@import "../../styles/baseline.scss";
+
+.frame {
+    margin-top: 2rem;
+    display: grid;
+    border: 2px dashed #9747FF;
+    border-radius: 12px;
+    width: 100%;
+    height: max-content;
+    background-color: rgba(151, 71, 255, 0.15);
+    padding: 1rem;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    grid-template-rows: max-content;
+    row-gap: 1rem;
+    position: relative;
+
+    &__header {
+        position: absolute;
+        color: #CBABF9;
+        top: -2rem;
+        left: 0.5rem;
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: 6px;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 16px;
+    }
+}

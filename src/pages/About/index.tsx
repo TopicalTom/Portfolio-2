@@ -1,11 +1,15 @@
 import { FC, useEffect } from 'react';
 
+// Asset
+import Profile from '../../assets/images/IMG_3350.png';
+
 // Styles
 import "./About.scss";
 
 // Components
 import Page from '../../components/Page';
-import Redirect from '../../components/Redirect';
+import Redirect from '../../components/DownloadCard';
+import Image from '../../components/Image';
 
 const About: FC = () => {
 
@@ -15,12 +19,11 @@ const About: FC = () => {
     }, []);
 
     return (
-        <Page title='About' className='about' >
+        <Page className='about' >
             <aside className='about__profile'>
                 <img 
                     className='about__image'
-                    //src={Profile}
-                    alt=""
+                    src={Profile}
                 />
             </aside>
             <section className='about__content'>
@@ -31,10 +34,6 @@ const About: FC = () => {
                 <p>I'm not all work though, as I like to balance my life by playing video games with friends, consuming as many movies as possible as I work my way through the IMDB Top 250, or driving my Jeep with the roof down when the weather is just right.</p>
                 <p>Make sure to reach out if you want to chat, or have a cool opportunity I might be interested in, as I am currently looking for a new position!</p>
             </section>
-            <Redirect 
-                title='Resume'
-                className='about__redirect'
-            />
         </Page>
     );
 };

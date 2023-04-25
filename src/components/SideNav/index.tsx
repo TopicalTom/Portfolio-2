@@ -7,18 +7,17 @@ import './SideNav.scss';
 // Guard
 interface SideNavProps {
     links: string[];
-    active: string;
 };
 
 // Components
 
-const SideNav: FC<SideNavProps> = ({ links, active }) => {
+const SideNav: FC<SideNavProps> = ({ links }) => {
     return (
         <nav className='sidenav'>
-            <h3 
+            <h5
                 className='sidenav__header'>
                 Jump to
-            </h3>
+            </h5>
             <ul 
                 className='sidenav__links'>
                 {links.map(link => {

@@ -8,7 +8,7 @@ import Page from '../../components/Page';
 
 const Contact: FC = () => {
     return (
-        <Page title='Contact' className='contact'>
+        <Page className='contact'>
 
         </Page>
     );

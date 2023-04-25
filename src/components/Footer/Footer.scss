@@ -2,79 +2,87 @@
 
 .footer {
     width: 100vw;
-    transition: color 0.3s ease;
-    transition: background-color 0.3s ease;
-    @include theme-aware('background', 'system-background-primary');
-
-    @include tablet {
-        padding: 100px 0px;
-    }
-
-    @include laptop {
-        padding: 60px 100px 100px 100px;
-        transition: background-color 0.3s ease;
-        border-color: #ffffff16;
-        //@include theme-aware('border-color', 'content-outline-light');
-    }
+    //background-color: red;
+    margin: 4rem auto;
 
     &__container {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
+        margin: 0 16px;
+        display: grid;
+        grid-template-areas:    ' wordmark '
+                                ' nav '
+                                ' break '
+                                ' socials '
+                                ' copyright';
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        column-gap: 4rem;
+
 
         @include tablet {
-            margin: 0 100px;
+            margin: 0 60px;
+            grid-template-areas:    ' wordmark nav '
+                                    ' break break '
+                                    ' socials copyright ';
+            grid-template-columns: 1fr 1fr;
+            row-gap: 2rem;
+            column-gap: 4rem;
         }
 
         @include laptop-small {
             margin: 0 100px;
-        }
-
-        @include desktop {
-            margin: 0 auto;
-            width: 1000px;
-        }
-    }
-
-    &__top {
-        display: none;
-
-        @include tablet {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            margin: auto;
-            padding-bottom: 60px;
-        }
-    }
-
-    &__wordmark {
-        display: none;
-
-        & > h3 {
-            color: white;
-            //@include theme-aware('color', 'color-text');
+            grid-template-areas:    ' wordmark nav '
+                                    ' break break '
+                                    ' socials copyright ';
+            grid-template-columns: 1fr 1fr;
+            row-gap: 2rem;
+            column-gap: 4rem;
         }
 
         @include laptop {
-            display: flex;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        
+    }
+
+    &__wordmark {
+        display: flex;
+
+        & > h3 {
+            color: white;
         }
     }
 
     &__nav {
-        display: flex;
-        flex-direction: row;
-        width: 500px;
-        justify-content: space-between;
+        grid-area: nav;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, max-content);
+        row-gap: 2rem;
+        width: 100%;
+
+        @include tablet {
+            grid-template-columns: repeat(3, max-content);
+            grid-template-rows: max-content;
+            column-gap: 2rem;
+        }
     }
 
     &__section {
         display: flex;
         flex-direction: column;
+        width: 120px;
+    }
+
+    &__break {
+        grid-area: break;
+        height: 1px;
+        width: 100%;
+        background-color: $black100;
     }
 
     &__label {
-        @include theme-aware('color', 'color-text');
+        color: $white;
         width: 100%;
         display: flex;
         font-size: 1rem;
@@ -85,56 +93,29 @@
     &__links {
         display: flex;
         flex-direction: column;
-    }
 
-    &__link {
-        width: 100%;
-        display: flex;
+        & > li > a {
+            color: $grey;
+            font-size: 1rem;
+            line-height: 2.2rem;
+            font-weight: normal;
 
-        &--external,
-        &--internal {
-            width: 100%;
-            display: flex;
-            @include theme-aware('color', 'color-text-alt');
-    
             &:hover {
-                @include theme-aware('color', 'link');
+                color: $white;
             }
-        }
-
-        &--social {
-            padding: 0px;
-        }
-    }
-
-    &__bottom {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        @include tablet {
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
-            padding-top: 40px;
-            border-top: 1px solid;
-            margin: auto;
-            border-color: #ffffff16;
-            //@include theme-aware('border-color', 'content-outline-light');
         }
     }
 
     &__social {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: auto;
-        width: 260px;
+        display: grid;
+        height: 44px;
+        grid-template-columns: repeat(3, 44px);
         padding-inline-start: 0px;
+        gap: 2rem;
+        justify-content: center;
 
         @include tablet {
-            width: 300px;
-            margin: 0;
+            justify-content: left;
         }
     }
 
@@ -143,10 +124,9 @@
         width: 25px;
         height: 25px;
         transition: all 0.2s ease 0s;
-        @include theme-aware('fill', 'color-text-alt');
+        fill: $white;
 
         &:hover {
-            @include theme-aware('fill', 'color-text');
             opacity: 1;
         }
     }
@@ -154,29 +134,17 @@
     &__copyright {
         display: flex;
         flex-direction: row;
+        text-align: right;
+        height: 44px;
+        align-items: center;
         justify-self: center;
-        margin: auto;
-        padding-top: 20px;
-        text-align: center;
-        padding-bottom: 80px;
-        position: relative;
-        @extend p;
-        @include theme-aware('color', 'color-text-alt');
 
         @include tablet {
-            padding: 0px;
-            margin: 0;
-        }
-    }
-
-    &__github {
-        text-decoration: none;
-        @extend p;
-        margin-left: 5px;
-        @include theme-aware('color', 'color-text-alt');
-
-        &:hover {
-            @include theme-aware('color', 'link');
+            justify-self: right;
         }
     }
 }
+
+/*
+
+*/

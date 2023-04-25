@@ -15,7 +15,7 @@ const Spacestagram: FC = () => {
     }, []);
 
     return (
-        <Page title='Spacestagram' className='project'>
+        <Page className='project'>
             <aside className='project__sidenav'>
 
             </aside>

@@ -1,0 +1,90 @@
+@import "../../styles/baseline.scss";
+
+.framework {
+    display: grid;
+    grid-template-areas:    'trigger action'
+                            'investment reward';
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4px;
+    grid-template-rows: 1fr 1fr;
+    height: 500px;
+    width: 100%;
+    margin: auto;
+    background-color: #181818;
+
+    @include tablet {
+        //width: 80%;
+        height: 400px;
+    }
+
+    &__label, 
+    &__sublabel {
+        position: absolute;
+        z-index: 9;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__item {
+        width: 100%;
+        text-align: right;
+    }
+
+    &__subsection {
+        width: 100%;
+        height: 50%;
+        position: relative;
+    }
+
+    &__section {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: $black;
+
+        &--trigger {
+            grid-area: trigger;
+            padding-left: 1.5rem;
+
+            & > span {
+                left: 0;
+                top: 0;
+            }
+        }
+
+        &--action {
+            grid-area: action;
+            padding-right: 1.5rem;
+
+            & > span {
+                right: 0;
+                top: 0;
+            }
+        }
+
+        &--investment {
+            grid-area: investment;
+            padding-left: 1.5rem;
+
+            & > span {
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        &--reward {
+            grid-area: reward;
+            padding-right: 1.5rem;
+
+            & > span {
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+}

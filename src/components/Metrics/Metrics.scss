@@ -1,0 +1,20 @@
+@import "../../styles/baseline.scss";
+
+.metrics {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    &__card {
+        width: 100%;
+        border-radius: 4px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgb(36, 36, 36);
+        background-color: rgb(21, 21, 21);
+        padding: 2rem 1.5rem;
+    }
+}

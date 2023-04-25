@@ -4,6 +4,9 @@ import {
     Routes as Switch,
     Route,
 } from "react-router-dom";
+import { featuredSelector } from './store/reducers';
+import { useActions } from './hooks';
+import { useSelector } from 'react-redux';
 
 // Styles
 import "./styles/baseline.scss";
@@ -13,8 +16,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 // Pages
-//import Spacestagram from './pages/Project/Spacestagram';
-//import Shoppies from './pages/Project/Shoppies';
 import Shop from './pages/Project/Shop';
 import Rally from "./pages/Project/Rally";
 import TouchBase from "./pages/Project/Touchbase";
@@ -24,10 +25,14 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 
 const App: FC = () => {
+    const { fetchFeatured } = useActions();
+    const { isLoadingFeatured } = useSelector(featuredSelector);
 
-    // Sets Appearance according to System Preferences
+    // Grabs initial assets/data
     useEffect(() => {
-        // Check for Light/Dark Appearance in System Settingss
+        // Check for Light/Dark Appearance in System Settings
+        // Pulls Featured Project Previews
+        fetchFeatured();
     }, []);
   
     return (

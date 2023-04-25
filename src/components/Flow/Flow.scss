@@ -1,0 +1,47 @@
+@import "../../styles/baseline.scss";
+
+.flow {
+    width: 100%;
+    margin: auto 0;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        align-items: center;
+        position: relative;
+        border: 1px solid rgb(36, 36, 36);
+        background-color: rgb(21, 21, 21);
+        padding: 0.25rem 1rem;
+        border-radius: 6px;
+        
+        & > h4:nth-child(0) {
+            color: $white;
+            text-transform: bold;
+        } 
+
+        & > h4 {
+            text-align: center;
+        }
+    }
+
+    &__iconography {
+        position: absolute;
+        top: -2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 100px;
+        background-color: $white;
+        padding: 0.35rem;
+        border: 1px solid $black300;
+
+        & > img {
+            width: 100%;
+        }
+    }
+}

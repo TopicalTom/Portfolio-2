@@ -1,10 +1,86 @@
 @import "../../styles/baseline.scss";
 
 .button {
+    //width: min-content;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
 
-    & > span {
-
-        width: auto;
+    &:hover {
+        cursor: pointer;
     }
 
+    & > span {
+        align-self: center;
+    }
+
+    // Size
+    &.small {
+        height: 44px;
+        width: 100%;
+        min-width: 44px;
+
+        @include tablet {
+            width: max-content;
+            padding: 0rem 1rem;
+        }
+    }
+
+    &.medium {
+        height: 48px;
+        width: 100%;
+        min-width: 48px;
+
+        @include tablet {
+            width: max-content;
+            padding: 0rem 1.5rem;
+        }
+    }
+
+    &.large {
+        height: 56px;
+        width: 100%;
+        min-width: 56px;
+
+        @include tablet {
+            width: max-content;
+            padding: 0rem 2rem;
+        }
+    }
+
+    // Type
+    &.cta {
+        background-color: $white;
+        color: $black;
+        border: 1px solid transparent;
+
+        &:hover {
+            opacity: 0.90;
+        }
+    }
+
+    &.primary {
+        color: whitesmoke;
+        background-color: #282828;
+    }
+
+    &.secondary {
+        color: whitesmoke;
+        border: 1px solid rgb(36, 36, 36);
+        background: rgba(14, 14, 14, 0.75);
+
+        &:hover {
+            background-color: $black100;
+        }
+    }
+
+    &.tertiary {
+        color: whitesmoke;
+        background: rgba(14, 14, 14, 0);
+        border: 1px solid transparent;
+
+        &:hover {
+            background: rgba(14, 14, 14, 0.75);
+        }
+    }
 }

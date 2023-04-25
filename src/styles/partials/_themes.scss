@@ -1,0 +1,18 @@
+@import "./partials/colors";
+
+$themes: (
+    light: (
+        background: $white,
+        border: $grey,
+        surface: $white opacity(65) backdropFilter(16px),
+    ),
+    dark: (
+        background: $black,
+        border: $black100,
+        surface: $black opacity(65) backdropFilter(16px),
+        surface-hovered: $black100,
+        surface-pressed: $black200,
+        surface-elevated: $black300,
+        paragraph: $white,
+    )
+);

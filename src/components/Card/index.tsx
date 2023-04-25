@@ -13,12 +13,12 @@ interface CardProps {
 // Components
 
 const Card: FC<CardProps> = ({ title, caption, color }) => {
-    const themedBackground = color ? color : 'red';
+    //const themedBackground = color ? color : 'red';
 
     return (
         <article 
             className='card'
-            style={{ background: themedBackground}}>
+            style={{ background: color}}>
             <h4>{title}</h4>
             <h3>{caption}</h3>
         </article>

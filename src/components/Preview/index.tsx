@@ -8,14 +8,20 @@ import overlay from "../../assets/overlay/iPhoneOverlay.svg";
 
 // Guard
 interface PreviewProps {
-    name: string;
-    video: string;
     classname: string;
+    content: Asset | undefined;
+};
+
+interface Asset {
+    name: string;
+    type: string;
+    file: string;
+    order: number;
 };
 
 // Components
 
-const Preview: FC<PreviewProps> = ({ name, video, classname }) => {
+const Preview: FC<PreviewProps> = ({ classname, content }) => {
     const [ isPlaying, setIsPlaying ] = useState(false);
 
     const toggleVideo = () => {
@@ -26,8 +32,8 @@ const Preview: FC<PreviewProps> = ({ name, video, classname }) => {
 
     // Watches for playback changes
     useEffect(() => {
-        let player = document.getElementById(`${name}`);
-        console.log(player);
+        //let player = document.getElementById(`${name}`);
+        //console.log(player);
 
         
         // Finds the video and toggles playback
@@ -36,7 +42,9 @@ const Preview: FC<PreviewProps> = ({ name, video, classname }) => {
             ?   player.pause() 
             :   player.play() 
             */
-    }, [isPlaying, name]);
+    }, [isPlaying]);
+
+    if ( content === undefined ) { return <></> };
 
     return (
         <div className={`preview ${classname}`}>
@@ -46,11 +54,11 @@ const Preview: FC<PreviewProps> = ({ name, video, classname }) => {
                 alt=""
             />
             <video
-                id={`${name}`}
+                id={`${content.name}`}
                 className='preview__video'
-                src={video} 
+                src={content.file} 
                 //autoPlay
-                //loop
+                loop
                 playsInline
                 muted
             />

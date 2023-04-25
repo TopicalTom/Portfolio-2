@@ -3,7 +3,34 @@
 .section {
     margin-bottom: 6rem;
 
-    & > p, h1, h2, h3, span {
-        padding-bottom: 1.5rem;
+    & > p, 
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    & > h3 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    & > ul {
+        margin-bottom: 1.5rem;
+        
+        & > li {
+            padding: 0.25rem 2rem;
+            color: $grey;
+            font-size: 1.15rem;
+            line-height: 2.2rem;
+            list-style-type: circle;
+            list-style-position: outside;
+            margin-left: 3rem;
+        }
+    }
+
+    &__marker {
+        border-radius: 4px;
+        padding: 8px 16px;
+        width: max-content;
+        margin-bottom: 1rem;
     }
 }

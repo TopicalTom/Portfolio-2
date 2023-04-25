@@ -6,7 +6,7 @@
 
     &__header {
         width: 100%;
-        //padding-left: 16px;
+        margin-bottom: 1rem;
     }
 
     &__links {
@@ -18,15 +18,22 @@
     &__link {
         padding: 4px 16px;
         width: 100%;
-        border-radius: 4px;
+        border-radius: 6px;
+        display: flex;
+        border: 1px solid;
+        border-color: $black;
+        height: 44px;
+        align-items: center;
         display: flex;
 
         &:hover {
-            background-color: #282828;
+            background-color: rgb(21, 21, 21);
+            cursor: pointer;
         }
 
         &.active {
-            background-color: #181818;
+            background-color: rgb(40, 40, 40);
+            border-color: rgb(36, 36, 36);
         }
     }
 }

@@ -4,20 +4,46 @@
 
     &__container {
         display: grid;
-        grid-template-areas:    ". content"
-                                "redirect redirect";
-        grid-gap: 120px;
-        grid-template-columns: 210px 1fr;
-        grid-template-rows: 1fr min-content;
+        padding-top: 80px;
+        grid-template-areas:    "content"
+                                "redirect";
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
     
-        @include tablet {
+
+        @include laptop-small {
+            grid-gap: 80px;
+            grid-template-columns: 160px 1fr;
+            grid-template-rows: 1fr max-content;
             grid-template-areas:    "sidenav content"
                                     "redirect redirect";
         }
 
         @include laptop {
-            grid-template-areas:    "sidenav content"
-                                    "redirect redirect";
+            padding-top: 240px;
+            grid-gap: 120px;
+            grid-template-columns: 210px 1fr;
+        }
+    }
+
+    &__image,
+    &__carousel,
+    &__preview,
+    &__video
+    &__model {
+        margin: 3rem 0rem;
+    }
+
+    &__subtext {
+        width: 60%;
+        margin: auto;
+        justify-self: center;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+
+        & > strong {
+            color: whitesmoke
         }
     }
 
@@ -29,18 +55,17 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            //width: 180px;
             width: 100%;
-            //width: 15%;
             position: sticky;
-            top: 240px;
-            height: calc(100vh - 280px);
+            top: 180px;
+            height: calc(100vh - 220px);
             overflow: scroll;
             margin-bottom: 405px;
         }
 
         @include laptop {
             margin-right: 70px;
+            top: 180px;
         }
     }
 
@@ -48,15 +73,7 @@
         margin: 0;
         width: 100%;
         grid-area: content;
-
-        @include laptop-small {
-            width: 60vw;
-        }
-        
-        @include laptop {
-            width: 730px;
-            width: 100%;
-        }
+        height: max-content;
     }
 
     &__redirect {

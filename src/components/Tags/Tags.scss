@@ -6,6 +6,8 @@
     padding: auto;
     display: flex;
     flex-direction: column;
+    align-self: center;
+    margin-bottom: 1rem;
 
     @include tablet {
         flex-direction: row;
@@ -18,7 +20,8 @@
         padding: auto;
         border-right: 1px solid;
         margin-right: 1.5rem;
-        @include theme-aware('border-right-color', 'content-outline-light');
+        border-right-color: #ffffff16;
+        //@include theme-aware('border-right-color', 'content-outline-light');
         align-content: center;
         align-items: center;
 

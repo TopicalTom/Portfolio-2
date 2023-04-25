@@ -1,29 +1,48 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+
+
+// Styles 
+import "./Button.scss";
 
 // Guard
 interface ButtonProps {
     className?: string;
-    type?: string;
-    size?: string;
-    //icon?: string;
-    leftIcon?: boolean;
-    rightIcon?: boolean;
-    label?: string;
+    type: string;
+    size: string;
+    to: string;
+    children: any;
+    scroll?: boolean;
+    iconized?: boolean;
 };
 
 const Button: FC<ButtonProps> = ({
     className,
     type,
     size, 
-    //icon, 
-    leftIcon,
-    rightIcon,
-    label, 
+    to,
+    children, 
+    scroll,
+    iconized
 }) => {
     return (
-        <div className={`${className} ${type} ${size}`}>
-            {label && <span>{label}</span>}
-        </div>
+        !scroll
+            ?   <Link 
+                    className={`button ${type} ${size} ${className} ${iconized}`}
+                    to={to}>
+                    <span>{children}</span>
+                </Link>
+            :   <ScrollLink 
+                    className={`button ${type} ${size} ${className}`}
+                    to={to}
+                    smooth={true}
+                    duration={500}
+                    offset={-120}>
+                    <span>{children}</span>
+                </ScrollLink>
+
+        
     );
 };
 

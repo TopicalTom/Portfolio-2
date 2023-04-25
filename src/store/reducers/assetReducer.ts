@@ -1,9 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../index';
 
+interface Asset {
+    name: string;
+    type: string;
+    file: string;
+    order: number;
+}
+
 interface AssetState {
     isLoadingAssets: boolean,
-    assets: string[]
+    assets: Asset[]
 };
 
 const initialState: AssetState = {
@@ -23,7 +30,7 @@ const assetsSlice = createSlice({
         },
         setAssets: (
             state, 
-            { payload }: PayloadAction<string[]>
+            { payload }: PayloadAction<Asset[]>
         ) => {
             state.assets = payload;
         }

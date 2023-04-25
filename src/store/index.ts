@@ -1,12 +1,14 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { 
     assetsReducer, 
-    themeReducer 
+    themeReducer,
+    featuredReducer
 } from './reducers';
 
 const rootReducer = combineReducers({ 
     theme: themeReducer,
-    assets: assetsReducer
+    assets: assetsReducer,
+    featured: featuredReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

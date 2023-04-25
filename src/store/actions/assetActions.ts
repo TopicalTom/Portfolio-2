@@ -3,8 +3,10 @@ import { Dispatch } from 'redux';
 import { AppThunk } from '../store';
 import { 
     getFirestore, 
-    doc, 
-    getDoc, 
+    getDocs, 
+    collection, 
+    orderBy, 
+    query
 } from "firebase/firestore";
 import { 
     setLoadingAssets,
@@ -21,14 +23,21 @@ export const fetchAssets = (project: string): AppThunk => async (dispatch: Dispa
         dispatch(setAssets([]));
 
         // FireStore references
-        const docRef = doc(firestore, "projects", project);
-        const docSnap = await getDoc(docRef);
+        const collectionRef = collection(firestore, "project", project, "assets");
+        const docQuery = query(collectionRef, orderBy("order", "asc"));
+        const docsSnapshot = await getDocs(docQuery);
 
-        // Stores found Assets
-        if (docSnap.exists()) {
-            console.log('Pulled');
-            dispatch(setAssets(['Test']));
-        }
+        // Stores Featured Project Details
+        if (docsSnapshot) {
+            let assets: any[] = [];
+
+            // Stores all Project-Specific Assets
+            docsSnapshot.forEach((doc) => {
+                const allAssets = doc.data();
+                assets.push(allAssets);
+            });
+            dispatch(setAssets(assets));
+        };
     } catch (err) {
         console.log(err);
     } finally {

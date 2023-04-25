@@ -2,8 +2,36 @@
 
 .redirect {
     width: 100%;
-    height: 420px;
-    border-radius: 16px;
-    background: #282828;
-    //border: 1px solid red;
+    //border-top: 1px solid rgb(36, 36, 36);
+
+    &__container {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+
+    &__card {
+        color: whitesmoke;
+        border: 1px solid rgb(36, 36, 36);
+        background: rgba(14, 14, 14, 0.75);
+        padding: 1.5rem 2rem;
+        border-radius: 6px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        &:hover {
+            background-color: $black100;
+            cursor: pointer;
+        }
+
+        & > a {
+            transform: scaleX(1);
+        }
+    }
+
+    &__details {
+        width: 100%;
+    }
 }
