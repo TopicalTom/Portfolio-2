@@ -99,10 +99,7 @@ const TouchBase: FC = () => {
                             title='Fraction Website'
                             caption='Where borrowers can learn more about the product or industry at large through relevant blog posts.'
                         />
-                        <Flow 
-                            action='Starts Application'
-                            location=''
-                        />
+                        <Flow />
                         <Image 
                             className='project__image'
                             content={assets[2]}
@@ -112,10 +109,7 @@ const TouchBase: FC = () => {
                             title='Application Flow'
                             caption='Where borrowers provide information relating to their property, financials and more for use in their loan application.'
                         />
-                        <Flow 
-                            action='Submits Application'
-                            location=''
-                        />
+                        <Flow />
                         <Image 
                             className='project__image'
                             content={assets[3]}
@@ -125,10 +119,7 @@ const TouchBase: FC = () => {
                             title='Pre-Funded Dashboard'
                             caption='Where borrowers can track the progress of their loan as they provide required documents and complete funding tasks.'
                         />
-                        <Flow 
-                            action='Completes Funding Tasks'
-                            location=''
-                        />
+                        <Flow />
                         <Image 
                             className='project__image'
                             content={assets[4]}
@@ -373,7 +364,7 @@ const TouchBase: FC = () => {
                         <p>Due to the Fraction platform still being in its infancy at the time of working on these flows, they were largely used in feedback sessions and were representative of a work-in-progress. That said, I recorded a quick video to demonstrate the fidelity in which I was working and to showcase how all of this comes together, in action:</p>
                         <Video 
                             className='project__video'
-                            content={assets[29]}
+                            content={assets[28]}
                         />
                     </SubSection>
                 </Section>

@@ -37,8 +37,8 @@ const AppPreview: FC<AppPreviewProps> = ({ classname, content }) => {
                             id={`${content.name}`}
                             className='app__video'
                             src={content.file} 
-                            //autoPlay
-                            //loop
+                            autoPlay
+                            loop
                             playsInline
                             muted
                         />
