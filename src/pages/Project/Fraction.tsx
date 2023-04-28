@@ -18,6 +18,7 @@ import Frame from '../../components/Frame';
 import Flow from '../../components/Flow';
 import SubSection from '../../components/SubSection';
 import Caption from '../../components/Caption';
+import WebPreview from '../../components/WebPreview';
 
 const TouchBase: FC = () => {
     const { fetchAssets } = useActions();
@@ -362,7 +363,7 @@ const TouchBase: FC = () => {
                         <h3>Flows</h3>
                         <p>Lastly we have Flows which strung together screens to create click-able prototypes for use in highlighting a cross section of the platform or a specific user flow/feature.</p>
                         <p>Due to the Fraction platform still being in its infancy at the time of working on these flows, they were largely used in feedback sessions and were representative of a work-in-progress. That said, I recorded a quick video to demonstrate the fidelity in which I was working and to showcase how all of this comes together, in action:</p>
-                        <Video 
+                        <WebPreview
                             className='project__video'
                             content={assets[28]}
                         />

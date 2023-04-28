@@ -23,7 +23,7 @@ const Video: FC<VideoProps> = ({ className, content }) => {
         <iframe 
             className={`video ${className}`}
             title=''
-            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+            allow={`accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture`}
             allowFullScreen
             src={content.file}
             aria-label={content.name}
