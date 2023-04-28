@@ -1,0 +1,40 @@
+@import "../../styles/baseline.scss";
+
+.app {
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 560px;
+    width: 100%;
+
+    @include tablet {
+        height: 720px;
+    }
+
+    &__overlay {
+        position: absolute;
+        height: 91.5%;
+        z-index: 9;
+        pointer-events: none;
+    }
+
+    &__mask {
+        position: absolute;
+        height: 86%;
+        z-index: 8;
+        overflow: hidden;
+        pointer-events: none;
+        border-radius: 2px;
+
+        @include tablet {
+            border-radius: 32px;
+        }
+    }
+
+    &__video {
+        height: 98.75%;
+    }
+}

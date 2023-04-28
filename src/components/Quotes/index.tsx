@@ -7,8 +7,8 @@ import './Quotes.scss';
 import Controller from '../Controller';
 
 interface Quote {
-    title: string;
-    caption: string;
+    takeaway: string;
+    quote: string;
     author?: string;
 }
 
@@ -22,46 +22,49 @@ const Quotes: FC<QuotesProps> = ({ className, content }) => {
     const [ active, setActive ] = useState(content[0]);
     const [ currentIndex, setCurrentIndex ] = useState(0);
 
-    const toggleActive = (direction: string) => {
-        let newIndex = currentIndex;
+    const toggleNext = (index: number) => {
+        let newIndex = index;
 
-        switch (direction) {
-            case 'back':
-                if (currentIndex > 0) {
-                    setActive(content[newIndex--]);
-                    setCurrentIndex(newIndex--);
-                } else {
-                    setActive(content[content.length]);
-                    setCurrentIndex(content.length);
-                }
-                break;
-            case 'next':
-                if (currentIndex < content.length - 1) {
-                    setActive(content[newIndex++]);
-                    setCurrentIndex(newIndex++);
-                } else {
-                    setActive(content[0]);
-                    setCurrentIndex(0);
-                }
-        };
+        if (index < content.length - 1) {
+            setActive(content[newIndex + 1]);
+            setCurrentIndex(newIndex + 1);
+        } else {
+            setActive(content[0]);
+            setCurrentIndex(0);
+        }
     };
 
-    // Grab assets from Firebase
+    const togglePrevious = (index: number) => {
+        let newIndex = index;
+
+        if (index !== 0) {
+            setActive(content[newIndex - 1]);
+            setCurrentIndex(newIndex - 1);
+        } else {
+            setActive(content[content.length - 1]);
+            setCurrentIndex(content.length - 1);
+        }
+    };
+
+    // Quote Change Handler
     useEffect(() => {
-        // Pulls Rally Assets
+        // Sets Active Quote
         setActive(content[0]);
+        setCurrentIndex(0);
     }, [content]);
 
     return (
         <div className={`quotes ${className}`}>
-            <div>
-
+            <div className='quotes__card'>
+                <h3>{active.takeaway}</h3>
+                <p>"{active.quote}"</p>
             </div>
             <Controller 
                 className='quotes__controller'
                 count={content.length}
                 currentIndex={currentIndex}
-                toggleActive={toggleActive}
+                next={toggleNext}
+                previous={togglePrevious}
             />
         </div>
     );

@@ -1,10 +1,10 @@
 @import "../../styles/baseline.scss";
 
 .frame {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: grid;
     border: 2px dashed #9747FF;
-    border-radius: 12px;
+    border-radius: 6px;
     width: 100%;
     height: max-content;
     background-color: rgba(151, 71, 255, 0.15);
@@ -19,7 +19,7 @@
         position: absolute;
         color: #CBABF9;
         top: -2rem;
-        left: 0.5rem;
+        left: 0.25rem;
         display: grid;
         grid-template-columns: max-content 1fr;
         column-gap: 6px;

@@ -2,36 +2,27 @@
 
 .redirect {
     width: 100%;
-    //border-top: 1px solid rgb(36, 36, 36);
+    color: whitesmoke;
+    border: 1px solid rgb(36, 36, 36);
+    background: rgba(14, 14, 14, 0.75);
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    &__container {
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-    }
-
-    &__card {
-        color: whitesmoke;
-        border: 1px solid rgb(36, 36, 36);
-        background: rgba(14, 14, 14, 0.75);
-        padding: 1.5rem 2rem;
-        border-radius: 6px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-
-        &:hover {
-            background-color: $black100;
-            cursor: pointer;
-        }
-
-        & > a {
-            transform: scaleX(1);
-        }
+    &:hover {
+        background: $black100;
     }
 
     &__details {
         width: 100%;
+    }
+
+    &__chevron {
+        height: 32px;
+        width: 32px;
+        fill: $white;
+        transform: rotate(180deg);
     }
 }

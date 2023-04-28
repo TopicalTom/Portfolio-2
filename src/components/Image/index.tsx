@@ -17,6 +17,7 @@ interface Asset {
 }
 
 const Image: FC<ImageProps> = ({ className, content }) => {
+    
     if ( content === undefined ) { return <></> };
     
     return (

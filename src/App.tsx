@@ -2,11 +2,9 @@ import { FC, useEffect } from 'react';
 import {
     BrowserRouter as Router,
     Routes as Switch,
-    Route,
+    Route
 } from "react-router-dom";
-import { featuredSelector } from './store/reducers';
 import { useActions } from './hooks';
-import { useSelector } from 'react-redux';
 
 // Styles
 import "./styles/baseline.scss";
@@ -26,7 +24,6 @@ import Home from "./pages/Home";
 
 const App: FC = () => {
     const { fetchFeatured } = useActions();
-    const { isLoadingFeatured } = useSelector(featuredSelector);
 
     // Grabs initial assets/data
     useEffect(() => {

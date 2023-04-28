@@ -12,9 +12,10 @@
         width: 100%;
         margin: 0 16px;
         display: grid;
-        grid-template-areas:    "wordmark menu";
-        grid-template-columns: 1fr max-content;
+        grid-template-areas:    "wordmark . menu";
+        grid-template-columns: min-content 1fr max-content;
         grid-template-rows: auto;
+        column-gap: 1fr;
         justify-content: center;
         align-items: center;
 
@@ -43,6 +44,8 @@
         
         & > h3 {
             color: whitesmoke;
+            font-size: 1.5rem;
+            line-height: 2rem;
         }
     }
 
@@ -51,20 +54,17 @@
 
         @include tablet {
             display: grid;
-            display: flex;
             grid-area: actions;
             width: max-content;
-            //grid-template-areas:    "cta options";
-            //grid-gap: 0.5rem;
         }
     }
 
     &__menu {
+        grid-area: menu;
         display: flex;
         width: max-content;
 
         @include tablet {
-            grid-area: menu;
             display: none;
         }
     }

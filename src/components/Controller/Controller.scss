@@ -17,6 +17,10 @@
 
     &__context {
         padding: 12px 24px;
+        height: 44px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
         //background: #ffffff16;
         //background-color: rgb(36, 36, 36);
         border: 1px solid rgb(36, 36, 36);
@@ -26,28 +30,46 @@
 
     &__back {
         //background: $black;
+        height: 44px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
         //background-color: rgb(36, 36, 36);
         border: 1px solid rgb(36, 36, 36);
         background-color: rgb(21, 21, 21);
         border-radius: 4px 0px 0px 4px;
 
+        &:hover {
+            cursor: pointer;
+            background-color: $black200;
+        }
+
         & > svg {
-            height: 32px;
-            width: 32px;
+            height: 24px;
+            width: 24px;
             fill: whitesmoke;
         }
     }
 
     &__next {
+        height: 44px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
         //background-color: rgb(36, 36, 36);
         //padding: auto;
         border: 1px solid rgb(36, 36, 36);
         background-color: rgb(21, 21, 21);
         border-radius: 0px 4px 4px 0px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $black200;
+        }
     
         & > svg {
-            height: 32px;
-            width: 32px;
+            height: 24px;
+            width: 24px;
             transform: scaleX(-1);
             fill: whitesmoke;
         }

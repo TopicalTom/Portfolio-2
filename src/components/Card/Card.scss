@@ -1,14 +1,13 @@
 @import "../../styles/baseline.scss";
 
 .card {
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin: 2rem;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 20px;
     padding: 80px 40px;
     border-radius: 15px;
 
     @include tablet {
-        margin: 200px 60px;
+        margin: 2rem;
         padding: 60px 40px;
         transition: all 0.2s ease 0s;
 
@@ -23,7 +22,6 @@
         margin-top: 1rem;
         margin-bottom: 2rem;
         text-align: left;
-        @include theme-aware('color', 'color-text-static');
     }
 
     & > h4 {
@@ -36,8 +34,9 @@
         padding-top: 20px;
         font-weight: bold;
         text-transform: uppercase;
-        @include theme-aware('color', 'color-text-static');
         opacity: 0.8;
+        color: $white;
+        opacity: 0.65;;
     }
 }
 

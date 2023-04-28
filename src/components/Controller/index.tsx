@@ -6,18 +6,20 @@ import './Controller.scss';
 // Guard
 interface ControllerProps {
     className: string;
-    toggleActive: (direction: string) => void;
+    next: (index: number) => void;
+    previous: (index: number) => void;
     currentIndex: number;
     count: number;
 };
 
-const Controller: FC<ControllerProps> = ({ className, toggleActive, currentIndex, count }) => {
+const Controller: FC<ControllerProps> = ({ className, next, previous, currentIndex, count }) => {
+    const adjustedNumber = currentIndex + 1;
 
     return (
         <div className={`controller ${className}`}>
             <div 
                 className='controller__back'
-                onClick={() => toggleActive('back')}>
+                onClick={() => previous(currentIndex)}>
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 24 24"
@@ -30,11 +32,11 @@ const Controller: FC<ControllerProps> = ({ className, toggleActive, currentIndex
             </div>
             <div 
                 className='controller__context'>
-                <span>{currentIndex} of {count}</span>
+                <span>{adjustedNumber} of {count}</span>
             </div>
             <div 
                 className='controller__next'
-                onClick={() => toggleActive('next')}>
+                onClick={() => next(currentIndex)}>
                 <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 24 24"

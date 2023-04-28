@@ -4,7 +4,7 @@
 
     &__container {
         display: grid;
-        padding-top: 80px;
+        padding-top: 120px;
         grid-template-areas:    "content"
                                 "redirect";
         grid-template-columns: 1fr;
@@ -31,7 +31,7 @@
     &__preview,
     &__video
     &__model {
-        margin: 3rem 0rem;
+        margin-top: 1.5rem;
     }
 
     &__subtext {
@@ -39,11 +39,14 @@
         margin: auto;
         justify-self: center;
         text-align: center;
-        margin-top: 1rem;
         margin-bottom: 4rem;
 
         & > strong {
             color: whitesmoke
+        }
+
+        @include tablet {
+            margin-top: 1rem;
         }
     }
 
@@ -74,9 +77,12 @@
         width: 100%;
         grid-area: content;
         height: max-content;
-    }
+        display: grid;
+        grid-auto-rows: max-content;
+        row-gap: 4rem;
 
-    &__redirect {
-        grid-area: redirect;
+        @include tablet {
+            row-gap: 6rem;
+        }
     }
 }

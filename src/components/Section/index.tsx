@@ -9,22 +9,24 @@ interface SectionProps {
     initial?: boolean;
     name: string;
     color: string;
-    className: string;
     children: any;
 };
 
 // Components
 
-const Section: FC<SectionProps> = ({ initial, name, className, color, children }) => {
+const Section: FC<SectionProps> = ({ initial, name, color, children }) => {
     return (
         <Element
             name={`${name}`}
-            className={`section ${className}`}>
-            {!initial &&    <div 
-                                className='section__marker'
-                                style={{'background': color}}>
-                                {name}
-                            </div>}
+            className='section'>
+            {!initial   
+                ?   <div 
+                        className='section__marker'
+                        style={{'background': color}}>
+                        {name}
+                    </div>
+                :   null
+            }
             {children}
         </Element>
     );

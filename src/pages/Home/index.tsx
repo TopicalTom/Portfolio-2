@@ -8,14 +8,13 @@ import { useSelector } from 'react-redux';
 import './Home.scss';
 
 // Components
-import Preview from '../../components/Preview';
-import Redirect from '../../components/DownloadCard';
+import App from '../../components/AppPreview';
 import Page from '../../components/Page';
 import Button from '../../components/Button';
 
 const Home: FC = () => {
     const { fetchFeatured } = useActions();
-    const { personalProjects, isLoadingFeatured } = useSelector(featuredSelector);
+    const { personalProjects } = useSelector(featuredSelector);
 
     // Grab assets from Firebase
     useEffect(() => {
@@ -31,7 +30,7 @@ const Home: FC = () => {
                         className="main__heading">
                         I'm Thomas Griffiths a Product Designer.
                     </h1>
-                    <p className="main__mission">
+                    <p className="main__description">
                         Specializing in building out design systems and crafting novel mobile experiences. Currently looking for a full-time position.
                     </p>
                     <div className='main__actions'>
@@ -48,7 +47,7 @@ const Home: FC = () => {
                             size='large'
                             to='Projects'
                             scroll>
-                            Browse other
+                            View Side Projects
                         </Button>
                     </div>
                 </div>
@@ -59,7 +58,7 @@ const Home: FC = () => {
                 {personalProjects.map((feature) => {
                     return (
                         <section className="promo">
-                            <Preview 
+                            <App
                                 classname='promo__preview'
                                 content={feature.videoPreview}
                             />
@@ -76,7 +75,7 @@ const Home: FC = () => {
                                     type='secondary'
                                     size='medium'
                                     to={`/project/${feature.name.toLowerCase()}`}>
-                                    View project
+                                    Learn more
                                 </Button>
                             </div>
                         </section>

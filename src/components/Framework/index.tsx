@@ -31,7 +31,7 @@ const Framework: FC<FrameworkProps> = ({
                     style={{ 'color': color }}>
                     Trigger
                 </span>
-                <div className='framework__subsection'>
+                <div className='framework__subsection framework__subsection--top'>
                     <h5 
                         className='framework__sublabel'>
                         External
@@ -46,7 +46,7 @@ const Framework: FC<FrameworkProps> = ({
                         )})}
                     </ul>
                 </div>
-                <div className='framework__subsection'>
+                <div className='framework__subsection framework__subsection--bottom'>
                     <h5 
                         className='framework__sublabel'>
                         Internal

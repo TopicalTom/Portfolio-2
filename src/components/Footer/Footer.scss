@@ -2,40 +2,23 @@
 
 .footer {
     width: 100vw;
-    //background-color: red;
     margin: 4rem auto;
 
     &__container {
         margin: 0 16px;
         display: grid;
-        grid-template-areas:    ' wordmark '
-                                ' nav '
+        grid-template-areas:    ' top '
                                 ' break '
-                                ' socials '
-                                ' copyright';
-        grid-template-columns: 1fr;
+                                ' bottom';
         row-gap: 2rem;
-        column-gap: 4rem;
 
 
         @include tablet {
             margin: 0 60px;
-            grid-template-areas:    ' wordmark nav '
-                                    ' break break '
-                                    ' socials copyright ';
-            grid-template-columns: 1fr 1fr;
-            row-gap: 2rem;
-            column-gap: 4rem;
         }
 
         @include laptop-small {
             margin: 0 100px;
-            grid-template-areas:    ' wordmark nav '
-                                    ' break break '
-                                    ' socials copyright ';
-            grid-template-columns: 1fr 1fr;
-            row-gap: 2rem;
-            column-gap: 4rem;
         }
 
         @include laptop {
@@ -45,11 +28,28 @@
         
     }
 
+    &__top {
+        grid-area: top;
+        display: grid;
+        width: 100%;
+        grid-template-areas:    ' wordmark' 
+                                ' nav ';
+        grid-template-rows: max-content;
+        row-gap: 2rem;
+
+        @include tablet {
+            grid-template-areas:    ' wordmark nav ';
+            grid-template-columns: 1fr max-content;
+        }
+    }
+
     &__wordmark {
         display: flex;
 
         & > h3 {
             color: white;
+            font-size: 1.5rem;
+            line-height: 2rem;
         }
     }
 
@@ -62,9 +62,10 @@
         width: 100%;
 
         @include tablet {
+            margin-top: 0.6rem;
             grid-template-columns: repeat(3, max-content);
             grid-template-rows: max-content;
-            column-gap: 2rem;
+            column-gap: 3rem;
         }
     }
 
@@ -72,13 +73,6 @@
         display: flex;
         flex-direction: column;
         width: 120px;
-    }
-
-    &__break {
-        grid-area: break;
-        height: 1px;
-        width: 100%;
-        background-color: $black100;
     }
 
     &__label {
@@ -99,6 +93,7 @@
             font-size: 1rem;
             line-height: 2.2rem;
             font-weight: normal;
+            cursor: pointer;
 
             &:hover {
                 color: $white;
@@ -106,45 +101,96 @@
         }
     }
 
-    &__social {
+    &__break {
+        grid-area: break;
+        height: 1px;
+        width: 100%;
+        //background-color: $black100;
+        background-color: #ffffff16;
+    }
+
+    &__bottom {
+        grid-area: bottom;
         display: grid;
-        height: 44px;
-        grid-template-columns: repeat(3, 44px);
-        padding-inline-start: 0px;
-        gap: 2rem;
-        justify-content: center;
+        height: max-content;
+        width: 100%;
+        grid-template-areas:    ' socials ' 
+                                ' copyright ';
+        grid-template-rows: max-content;
+        row-gap: 1.5rem;
+        align-content: center;
 
         @include tablet {
-            justify-content: left;
+            height: 44px;
+            grid-template-areas:    ' socials copyright ';
+            grid-template-columns: 1fr max-content;
         }
     }
 
+    &__socials {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        padding-inline-start: 0px;
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+
+        & > a {
+            height: 32px;
+
+            @include tablet {
+                height: 24px;
+            }
+        }
+
+        @include tablet {
+            justify-content: flex-start;
+        }
+    }
+    
     &__icon {
         opacity: 0.6;
-        width: 25px;
-        height: 25px;
+        width: 32px;
+        height: 32px;
         transition: all 0.2s ease 0s;
         fill: $white;
 
         &:hover {
             opacity: 1;
         }
+
+        @include tablet {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     &__copyright {
-        display: flex;
-        flex-direction: row;
-        text-align: right;
-        height: 44px;
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 0.5rem;
+        width: max-content;
+        //height: 44px;
         align-items: center;
         justify-self: center;
 
+        & > span {
+            opacity: 0.6;
+            color: $white;
+        }
+
         @include tablet {
             justify-self: right;
+            text-align: right;
+        }
+    }
+
+    &__source {
+        opacity: 0.6;
+        color: $white;
+
+        &:hover {
+            opacity: 1;
         }
     }
 }
-
-/*
-
-*/

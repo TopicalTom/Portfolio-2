@@ -1,13 +1,10 @@
 @import "../../styles/baseline.scss";
 
 .tag {
-    //margin: 1.5rem 0rem 1.5rem 0rem;
-    //align-items: center;
     padding: auto;
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin-bottom: 1rem;
 
     @include tablet {
         flex-direction: row;
@@ -20,13 +17,16 @@
         padding: auto;
         border-right: 1px solid;
         margin-right: 1.5rem;
-        border-right-color: #ffffff16;
-        //@include theme-aware('border-right-color', 'content-outline-light');
+        border-right-color: $black;
         align-content: center;
         align-items: center;
 
         &:last-child {
             border-right: 0px solid;
+        }
+
+        @include tablet {
+            border-right-color: #ffffff16;
         }
     }
 

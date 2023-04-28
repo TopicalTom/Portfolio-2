@@ -1,0 +1,21 @@
+@import "../../styles/baseline.scss";
+
+.quotes {
+
+    &__card {
+        width: 100%;
+        border-radius: 4px;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgb(36, 36, 36);
+        background-color: rgb(21, 21, 21);
+        padding: 3rem 3.5rem;
+
+        & > p {
+            margin-top: 0.35rem;
+            //line-height: 1.8rem;
+        }
+    }
+}

@@ -22,7 +22,7 @@ const Metrics: FC<MetricsProps> = ({ className, data }) => {
                 return (
                     <div className='metrics__card'>
                         <h3>{metric.value}</h3>
-                        <p>{metric.caption}</p>
+                        <span>{metric.caption}</span>
                     </div>
                 )
             })}

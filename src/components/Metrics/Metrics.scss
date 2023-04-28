@@ -3,8 +3,14 @@
 .metrics {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-auto-rows: row;
+    gap: 1rem;
+    padding: 1rem 0rem;
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 
     &__card {
         width: 100%;
@@ -16,5 +22,11 @@
         border: 1px solid rgb(36, 36, 36);
         background-color: rgb(21, 21, 21);
         padding: 2rem 1.5rem;
+
+        & > span {
+            //margin-top: 0.15rem;
+            //line-height: 1.5rem;
+            color: $grey;
+        }
     }
 }

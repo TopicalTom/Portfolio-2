@@ -19,42 +19,43 @@ interface Asset {
 interface CarouselProps {
     className: string;
     type: 'image' | 'video';
-    data: Asset[]
+    content: Asset[]
 };
 
-const Carousel: FC<CarouselProps> = ({ className, type, data }) => {
-    const [ active, setActive ] = useState(data[0]);
+const Carousel: FC<CarouselProps> = ({ className, type, content }) => {
+    const [ active, setActive ] = useState(content[0]);
     const [ currentIndex, setCurrentIndex ] = useState(0);
 
-    const toggleActive = (direction: string) => {
-        let newIndex = currentIndex;
+    const toggleNext = (index: number) => {
+        let newIndex = index;
 
-        switch (direction) {
-            case 'back':
-                if (currentIndex > 0) {
-                    setActive(data[newIndex--]);
-                    setCurrentIndex(newIndex--);
-                } else {
-                    setActive(data[2]);
-                    setCurrentIndex(2);
-                }
-                break;
-            case 'next':
-                if (currentIndex < data.length) {
-                    setActive(data[newIndex++]);
-                    setCurrentIndex(newIndex++);
-                } else {
-                    setActive(data[0]);
-                    setCurrentIndex(0);
-                }
-        };
+        if (index < content.length - 1) {
+            setActive(content[newIndex + 1]);
+            setCurrentIndex(newIndex + 1);
+        } else {
+            setActive(content[0]);
+            setCurrentIndex(0);
+        }
     };
 
-    // Grab assets from Firebase
+    const togglePrevious = (index: number) => {
+        let newIndex = index;
+
+        if (index !== 0) {
+            setActive(content[newIndex - 1]);
+            setCurrentIndex(newIndex - 1);
+        } else {
+            setActive(content[content.length - 1]);
+            setCurrentIndex(content.length - 1);
+        }
+    };
+
+    // Quote Change Handler
     useEffect(() => {
-        // Pulls Rally Assets
-        setActive(data[0]);
-    }, [data]);
+        // Sets Active Quote
+        setActive(content[0]);
+        setCurrentIndex(0);
+    }, [content]);
 
     switch (type) {
         case 'image':
@@ -66,9 +67,10 @@ const Carousel: FC<CarouselProps> = ({ className, type, data }) => {
                     />
                     <Controller 
                         className='carousel__controller'
-                        count={data.length}
+                        count={content.length}
                         currentIndex={currentIndex}
-                        toggleActive={toggleActive}
+                        next={toggleNext}
+                        previous={togglePrevious}
                     />
                 </div>
             );
@@ -81,9 +83,10 @@ const Carousel: FC<CarouselProps> = ({ className, type, data }) => {
                     />
                     <Controller 
                         className='carousel__controller'
-                        count={data.length}
+                        count={content.length}
                         currentIndex={currentIndex}
-                        toggleActive={toggleActive}
+                        next={toggleNext}
+                        previous={togglePrevious}
                     />
                 </div>
             );

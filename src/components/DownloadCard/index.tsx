@@ -4,15 +4,21 @@ import { FC } from 'react';
 import './DownloadCard.scss';
 
 import Resume from '../../assets/images/ThomasGriffithsResumeImage.png';
+import resume from "../../assets/files/ThomasGriffithsResume.pdf";
 
 const DownloadCard: FC = () => {
     return (
         <div className='downloadcard'>
-            <h2>Like what you see?</h2>
-            <p>Download my resume</p>
-            <img 
-                src={Resume}
-            />
+            <a 
+                className='downloadcard__container'
+                href={resume}
+                download="ThomasGriffithsResume">
+                <h2>Are you hiring?</h2>
+                <p>Download my resume</p>
+                <img 
+                    src={Resume}
+                />
+            </a>
         </div>
     );
 };

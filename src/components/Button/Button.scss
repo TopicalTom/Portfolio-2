@@ -19,10 +19,10 @@
         height: 44px;
         width: 100%;
         min-width: 44px;
+        padding: 0rem 1rem;
 
         @include tablet {
             width: max-content;
-            padding: 0rem 1rem;
         }
     }
 
@@ -30,10 +30,10 @@
         height: 48px;
         width: 100%;
         min-width: 48px;
+        padding: 0rem 1.5rem;
 
         @include tablet {
             width: max-content;
-            padding: 0rem 1.5rem;
         }
     }
 
@@ -41,10 +41,10 @@
         height: 56px;
         width: 100%;
         min-width: 56px;
+        padding: 0rem 2rem;
 
         @include tablet {
             width: max-content;
-            padding: 0rem 2rem;
         }
     }
 

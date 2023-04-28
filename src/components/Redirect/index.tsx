@@ -1,40 +1,35 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './Redirect.scss';
 
-// Components
-import Button from '../Button';
+interface RedirectProps {
+    className: string;
+    name: string;
+    link: string;
+};
 
-
-const Redirect: FC = () => {
+const Redirect: FC<RedirectProps> = ({ className, name, link}) => {
 
     return (
-        <div className='redirect'>
-            <div className='redirect__container'>
-                <div className='redirect__card'>
-                    <div className='redirect__details'>
-                        <h4>Next Project</h4>
-                        <h3>project_name</h3>
-                    </div>
-                    <Button
-                        className='pageheader__button'
-                        type='tertiary'
-                        size='small'
-                        to='/'>
-                        <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            viewBox="0 0 24 24"
-                            className="pageheader__chevron">
-                            <g>
-                                <rect width="24" height="24" opacity="0" transform="rotate(90 12 12)" />
-                                <path d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z"/>
-                            </g>
-                        </svg>
-                    </Button>
-                </div>
+        <Link 
+            className={`${className} redirect`}
+            to={link}>
+            <div className='redirect__details'>
+                <h4>Next Project</h4>
+                <h3>{name}</h3>
             </div>
-        </div>
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24"
+                className="redirect__chevron">
+                <g>
+                    <rect width="24" height="24" opacity="0" />
+                    <path d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z"/>
+                </g>
+            </svg>
+        </Link>
     );
 };
 

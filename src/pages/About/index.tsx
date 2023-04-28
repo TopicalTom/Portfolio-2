@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 // Asset
 import Profile from '../../assets/images/IMG_3350.png';
@@ -8,15 +8,8 @@ import "./About.scss";
 
 // Components
 import Page from '../../components/Page';
-import Redirect from '../../components/DownloadCard';
-import Image from '../../components/Image';
 
 const About: FC = () => {
-
-    // Grab assets from Firebase
-    useEffect(() => {
-        // Pull Profile Picture
-    }, []);
 
     return (
         <Page className='about' >
