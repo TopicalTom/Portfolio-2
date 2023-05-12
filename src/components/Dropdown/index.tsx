@@ -48,7 +48,7 @@ const Dropdown: FC<DropdownProps> = ({
                                 <Tile 
                                     className='dropdown__tile dropdown__tile--fun'
                                     type='Design System'
-                                    platform='web'
+                                    platform='website'
                                     pathname={`/project/${feature.name.toLowerCase()}`}
                                     content={feature}
                                 />

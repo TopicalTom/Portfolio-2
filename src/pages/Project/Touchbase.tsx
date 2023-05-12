@@ -423,10 +423,10 @@ const TouchBase: FC = () => {
                         className='project__framework'
                         color='rgb(77, 127, 255)'
                         externalTrigger={[ "Direct Message", "Push Notifications" ]}
-                        internalTrigger={[ "FOMO", "Boredom" ]}
-                        action={[ "Create Account", "Starts Rallying", "Messages Friend(s)" ]}
-                        reward={[ "Boredom Gone", "Connects with Friends" ]}
-                        investment={[ "Social Circle Grows" ]}
+                        internalTrigger={[ "Need to Connect", "Vibe Check" ]}
+                        action={[ "Opens App", "Shares Details", "Messages Contact" ]}
+                        reward={[ "Scheduled Networking Session", "Connects with Contact", "Finds New Opportunity" ]}
+                        investment={[ "Establishes Networking Routinue", "Builds Connections", "Network Grows" ]}
                     />
                 </Section>
                 <Redirect 

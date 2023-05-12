@@ -471,8 +471,8 @@ const Rally: FC = () => {
                         externalTrigger={[ "Direct Message", "Push Notifications" ]}
                         internalTrigger={[ "FOMO", "Boredom" ]}
                         action={[ "Create Account", "Starts Rallying", "Messages Friend(s)" ]}
-                        reward={[ "Boredom Gone", "Connects with Friends" ]}
-                        investment={[ "Social Circle Grows" ]}
+                        reward={[ "Boredom Gone", "Connects with Friends", "[Finds Places to Go]" ]}
+                        investment={[ "Social Circle Grows", "[Schedule Future Plans]", "[Saves Places]" ]}
                     />
                 </Section>
                 <Redirect 
